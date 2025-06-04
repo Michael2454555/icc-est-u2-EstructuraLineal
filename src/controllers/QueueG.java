@@ -58,5 +58,22 @@ public class QueueG <T>{
         }
         System.out.println();
     }
+    public T findByName(String clave){
+        NodeGeneric<T> aux = primero;
+        while (aux!=null) {
+            if(aux.getNext().toString().equalsIgnoreCase(clave)){
+                return aux.getValue();
+
+            }
+            aux=aux.getNext();
+            
+        }
+        return null;
+
+    }
+
+    public T deleteByName(String clave){
+
+    }
 
 }
