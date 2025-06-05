@@ -72,8 +72,33 @@ public class QueueG <T>{
 
     }
 
-    public T deleteByName(String clave){
+    public T deleteByName(String nombre) {
+        NodeGeneric<T> actual = this.primero;
+        NodeGeneric<T> anterior = null;
 
+        while (actual != null) {
+            if (actual.getValue().getNombre().equalsIgnoreCase(nombre)) {
+                T personaEliminada = actual.getValue();
+
+                if (anterior == null) { // es el primero
+                    this.primero = actual.getNext();
+                    if (this.primero == null) this.ultimo = null; // la cola quedó vacía
+                } else {
+                    anterior.setNext(actual.getNext());
+                    if (actual == this.ultimo) {
+                        this.ultimo = anterior;
+                    }
+                }
+
+                this.size--;
+                return personaEliminada;
+            }
+
+            anterior = actual;
+            actual = actual.getNext();
+        }
+
+        return null;
     }
 
 }
