@@ -31,7 +31,7 @@ public class App {
         Persona p3 = new Persona ("Pedro");
         Persona p4 = new Persona ("David");
 
-        QueueG<Persona> colaPersonas = new QueueG<Persona>();
+        QueuePersona colaPersonas = new QueuePersona();
         colaPersonas.add(p1);
         colaPersonas.add(p2);
         colaPersonas.add(p3);
@@ -40,9 +40,9 @@ public class App {
         System.out.println("Personas atendida -> "+ colaPersonas.remove());
         colaPersonas.printCola();
         Persona pB = colaPersonas.findByName("Juan");
-        System.out.println("Personas encontrada -> "+ pB !=null? pB : "ninguna");
+        System.out.println("Personas encontrada -> " + (pB != null ? pB : "ninguna"));
         Persona pE = colaPersonas.deleteByName("Pedro");
-        System.out.println("Personas eliminada -> "+ pE !=null? pE : "ninguna");
+       System.out.println("Personas eliminada -> " + (pE != null ? pE : "ninguna"));
         colaPersonas.printCola();
         
 
