@@ -5,9 +5,9 @@ import java.util.EmptyStackException;
 import models.NodeGeneric;
 
 public class QueueG <T>{
-    private NodeGeneric <T> primero; 
-    private NodeGeneric <T> ultimo; 
-    private int size;
+    protected NodeGeneric <T> primero; 
+    protected NodeGeneric <T> ultimo; 
+    protected int size;
 
     public QueueG(){
         this.primero=null;
@@ -61,3 +61,4 @@ public class QueueG <T>{
     
 
 }
+
